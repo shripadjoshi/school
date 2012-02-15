@@ -1,0 +1,31 @@
+<%#= form_for :url => attendance_path(@attendance,:type=> "whtever"),:html=> {:method => :post} do |f| %>
+
+<%#= form_for @attendance, :url => object_path(@object, :type => "whtever"), :html => {:method => :post} do |f| %>
+
+<%= form_for @attendance,
+             :url => { :controller => :attendances,
+                       :action => :create,
+                       :type => params[:type], :id=>params[:id] } do |f| %>
+  <% if @attendance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@attendance.errors.count, "error") %> prohibited this attendance from being saved:</h2>
+
+      <ul>
+      <% @attendance.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :time_in %><br />
+    <%= f.datetime_select :time_in %>
+  </div>
+  <div class="field">
+    <%= f.label :time_out %><br />
+    <%= f.datetime_select :time_out %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

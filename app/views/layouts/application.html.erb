@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>School</title>
+    <%= stylesheet_link_tag  "reset", "fluid_grid", "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="container_16 wrapper">
+      <div class="header grid_16">
+        <%= render 'shared/navigation' %>
+        <div class="clear"></div>
+      </div>
+      <hr class="menu-sep grid_16"></hr>
+      <% if user_signed_in? %>
+        <div class="menu grid_16">
+          <div class="grid_12 menu-bar">
+            <ul>
+              <li><%= link_to('Classrooms', classrooms_path) %></li>
+              <li><%= link_to('Students', students_path) %></li>
+              <li><%= link_to('Teachers', teachers_path) %></li>
+            </ul>
+          </div>
+        </div>
+      <% end%>
+      <% if flash.present? %>
+        <div class="flash_setup grid_16">
+          <div class="grid_12">
+            <%- flash.each do |name, msg| -%>
+              <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+            <%- end -%>
+          </div>
+        </div>
+      <% end %>
+      <div class="content grid_16">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
+

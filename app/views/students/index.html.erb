@@ -1,0 +1,29 @@
+<h1>Listing students</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Class</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @students.each do |student| %>
+  <tr>
+    <td><%= student.name %></td>
+    <td><%= student.phone %></td>
+    <td><%= student.classroom.name %></td>
+    <td><%= link_to 'Show', student %></td>
+    <td> | <%= link_to 'Edit', edit_student_path(student) %></td>
+    <td> | <%= link_to 'Mark Attendence', new_attendance_path(:id => student, :type => "Student") %></td>
+    <td> | <%= link_to 'Destroy', student, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Student', new_student_path %>
