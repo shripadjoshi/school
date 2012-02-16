@@ -4,6 +4,8 @@
   <tr>
     <th>Time in(mm-dd-yy hrs:mins)</th>
     <th>Time out(mm-dd-yy hrs:mins)</th>
+    <th>Attendence For</th>
+    <th>Name</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,13 +15,11 @@
   <tr>
     <td><%= attendance.time_in.strftime("%m-%d-%Y %H:%M") %></td>
     <td><%= attendance.time_out.strftime("%m-%d-%Y %H:%M") %></td>
+<td><%= attendance.attendable_type %></td>
+<td><%= attendance.attendable.name %></td>
     <td><%= link_to 'Show', attendance %></td>
     <td><%= link_to 'Edit', edit_attendance_path(attendance) %></td>
     <td><%= link_to 'Destroy', attendance, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Attendance', new_attendance_path %>

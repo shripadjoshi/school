@@ -3,10 +3,20 @@ School::Application.routes.draw do
 
   resources :teachers
 
-  resources :students
+  resources :students do
+    #this route will handle the activation and deactivation of student
+    member do
+      get 'activate'
+    end    
+  end
 
-  resources :classrooms
-
+  resources :classrooms do 
+    #this route will check for the actives students for perticular class
+    member do
+      get 'actives'
+    end
+  end
+  
   root :to => "home#index"
 
   devise_for :users

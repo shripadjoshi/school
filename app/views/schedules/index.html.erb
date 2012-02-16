@@ -1,0 +1,29 @@
+<h1>Listing schedules</h1>
+
+<table>
+  <tr>
+    <th>Start date(MM-DD-YY Hrs:Mins)</th>
+    <th>End date (MM-DD-YY Hrs:Mins)</th>
+    <th>Classroom</th>
+    <th>Teacher</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @schedules.each do |schedule| %>
+  <tr>
+    <td><%= schedule.start_date.strftime("%m-%d-%Y %H:%M")  %></td>
+    <td><%= schedule.end_date.strftime("%m-%d-%Y %H:%M")  %></td>
+    <td><%= schedule.classroom.name %></td>
+    <td><%= schedule.teacher.name %></td>
+    <td><%= link_to 'Show', schedule %></td>
+    <td> | <%= link_to 'Edit', edit_schedule_path(schedule) %></td>
+    <td> | <%= link_to 'Destroy', schedule, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Schedule', new_schedule_path %>

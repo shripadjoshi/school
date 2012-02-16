@@ -11,17 +11,6 @@ class AttendancesController < ApplicationController
     end
   end
 
-  # GET /attendances/1
-  # GET /attendances/1.json
-  def show
-    @attendance = Attendance.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @attendance }
-    end
-  end
-
   # GET /attendances/new
   # GET /attendances/new.json
   def new
@@ -83,12 +72,4 @@ class AttendancesController < ApplicationController
     end
   end
 
-  private
-  def get_attendes
-    if params[:type] == 'Teacher'
-      @attendable = Teacher.find(params[:id])
-    else
-      @attendable = Student.find(params[:id])
-    end
-  end
 end

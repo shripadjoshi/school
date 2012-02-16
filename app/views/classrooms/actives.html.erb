@@ -21,13 +21,7 @@
     <td><%= student.active ? "Yes" : "No" %></td>
     <td><%= link_to 'Show', student %></td>
     <td> | <%= link_to 'Edit', edit_student_path(student) %></td>
-    <td> | 
-<% if student.active %>
-	<%= link_to 'Mark Attendence', new_attendance_path(:id => student, :type => "Student") %>
-<%else%> 
-	Mark Attendance
-<%end%>
-</td>
+    <td> | <%= link_to 'Mark Attendence', new_attendance_path(:id => student, :type => "Student") %></td>
 <td> | <%= link_to "#{student.active ? 'Deactivate' : 'Activate' }", activate_student_path(student) %></td>
     <td> | <%= link_to 'Destroy', student, confirm: 'Are you sure?', method: :delete %></td>
   </tr>

@@ -1,13 +1,11 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Time in:</b>
-  <%= @attendance.time_in %>
+  <%= @attendance.time_in.strftime("%m-%d-%Y %H:%M") %>
 </p>
 
 <p>
   <b>Time out:</b>
-  <%= @attendance.time_out %>
+  <%= @attendance.time_out.strftime("%m-%d-%Y %H:%M") %>
 </p>
 
 

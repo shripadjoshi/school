@@ -92,4 +92,12 @@ class StudentsController < ApplicationController
       format.xml { head :ok }
     end
   end
+  
+  def activate
+    state = Student.find(params[:id])
+    state.update_attribute('active', !state.active)
+    @students = Student.all
+    redirect_to students_path
+  end  
+  
 end

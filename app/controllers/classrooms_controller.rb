@@ -88,4 +88,9 @@ class ClassroomsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def actives
+    @students = Student.actives(params[:id])
+  end
+  
 end

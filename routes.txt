@@ -1,14 +1,43 @@
-                    root        /                              {:controller=>"home", :action=>"index"}
-        new_user_session GET    /users/sign_in(.:format)       {:action=>"new", :controller=>"devise/sessions"}
-            user_session POST   /users/sign_in(.:format)       {:action=>"create", :controller=>"devise/sessions"}
-    destroy_user_session DELETE /users/sign_out(.:format)      {:action=>"destroy", :controller=>"devise/sessions"}
-           user_password POST   /users/password(.:format)      {:action=>"create", :controller=>"devise/passwords"}
-       new_user_password GET    /users/password/new(.:format)  {:action=>"new", :controller=>"devise/passwords"}
-      edit_user_password GET    /users/password/edit(.:format) {:action=>"edit", :controller=>"devise/passwords"}
-                         PUT    /users/password(.:format)      {:action=>"update", :controller=>"devise/passwords"}
-cancel_user_registration GET    /users/cancel(.:format)        {:action=>"cancel", :controller=>"devise/registrations"}
-       user_registration POST   /users(.:format)               {:action=>"create", :controller=>"devise/registrations"}
-   new_user_registration GET    /users/sign_up(.:format)       {:action=>"new", :controller=>"devise/registrations"}
-  edit_user_registration GET    /users/edit(.:format)          {:action=>"edit", :controller=>"devise/registrations"}
-                         PUT    /users(.:format)               {:action=>"update", :controller=>"devise/registrations"}
-                         DELETE /users(.:format)               {:action=>"destroy", :controller=>"devise/registrations"}
+             attendances GET    /attendances(.:format)           {:action=>"index", :controller=>"attendances"}
+                         POST   /attendances(.:format)           {:action=>"create", :controller=>"attendances"}
+          new_attendance GET    /attendances/new(.:format)       {:action=>"new", :controller=>"attendances"}
+         edit_attendance GET    /attendances/:id/edit(.:format)  {:action=>"edit", :controller=>"attendances"}
+              attendance GET    /attendances/:id(.:format)       {:action=>"show", :controller=>"attendances"}
+                         PUT    /attendances/:id(.:format)       {:action=>"update", :controller=>"attendances"}
+                         DELETE /attendances/:id(.:format)       {:action=>"destroy", :controller=>"attendances"}
+                teachers GET    /teachers(.:format)              {:action=>"index", :controller=>"teachers"}
+                         POST   /teachers(.:format)              {:action=>"create", :controller=>"teachers"}
+             new_teacher GET    /teachers/new(.:format)          {:action=>"new", :controller=>"teachers"}
+            edit_teacher GET    /teachers/:id/edit(.:format)     {:action=>"edit", :controller=>"teachers"}
+                 teacher GET    /teachers/:id(.:format)          {:action=>"show", :controller=>"teachers"}
+                         PUT    /teachers/:id(.:format)          {:action=>"update", :controller=>"teachers"}
+                         DELETE /teachers/:id(.:format)          {:action=>"destroy", :controller=>"teachers"}
+        activate_student GET    /students/:id/activate(.:format) {:action=>"activate", :controller=>"students"}
+                students GET    /students(.:format)              {:action=>"index", :controller=>"students"}
+                         POST   /students(.:format)              {:action=>"create", :controller=>"students"}
+             new_student GET    /students/new(.:format)          {:action=>"new", :controller=>"students"}
+            edit_student GET    /students/:id/edit(.:format)     {:action=>"edit", :controller=>"students"}
+                 student GET    /students/:id(.:format)          {:action=>"show", :controller=>"students"}
+                         PUT    /students/:id(.:format)          {:action=>"update", :controller=>"students"}
+                         DELETE /students/:id(.:format)          {:action=>"destroy", :controller=>"students"}
+              classrooms GET    /classrooms(.:format)            {:action=>"index", :controller=>"classrooms"}
+                         POST   /classrooms(.:format)            {:action=>"create", :controller=>"classrooms"}
+           new_classroom GET    /classrooms/new(.:format)        {:action=>"new", :controller=>"classrooms"}
+          edit_classroom GET    /classrooms/:id/edit(.:format)   {:action=>"edit", :controller=>"classrooms"}
+               classroom GET    /classrooms/:id(.:format)        {:action=>"show", :controller=>"classrooms"}
+                         PUT    /classrooms/:id(.:format)        {:action=>"update", :controller=>"classrooms"}
+                         DELETE /classrooms/:id(.:format)        {:action=>"destroy", :controller=>"classrooms"}
+                    root        /                                {:controller=>"home", :action=>"index"}
+        new_user_session GET    /users/sign_in(.:format)         {:action=>"new", :controller=>"devise/sessions"}
+            user_session POST   /users/sign_in(.:format)         {:action=>"create", :controller=>"devise/sessions"}
+    destroy_user_session DELETE /users/sign_out(.:format)        {:action=>"destroy", :controller=>"devise/sessions"}
+           user_password POST   /users/password(.:format)        {:action=>"create", :controller=>"devise/passwords"}
+       new_user_password GET    /users/password/new(.:format)    {:action=>"new", :controller=>"devise/passwords"}
+      edit_user_password GET    /users/password/edit(.:format)   {:action=>"edit", :controller=>"devise/passwords"}
+                         PUT    /users/password(.:format)        {:action=>"update", :controller=>"devise/passwords"}
+cancel_user_registration GET    /users/cancel(.:format)          {:action=>"cancel", :controller=>"devise/registrations"}
+       user_registration POST   /users(.:format)                 {:action=>"create", :controller=>"devise/registrations"}
+   new_user_registration GET    /users/sign_up(.:format)         {:action=>"new", :controller=>"devise/registrations"}
+  edit_user_registration GET    /users/edit(.:format)            {:action=>"edit", :controller=>"devise/registrations"}
+                         PUT    /users(.:format)                 {:action=>"update", :controller=>"devise/registrations"}
+                         DELETE /users(.:format)                 {:action=>"destroy", :controller=>"devise/registrations"}
